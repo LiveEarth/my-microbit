@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "microbit-russian-font": "github:nenahov/microbit-russian-font#853f1a0322d137063d92934c06e8662519099fa0"
     },
     "files": [
         "main.blocks",
