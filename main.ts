@@ -1,3 +1,15 @@
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Duck)
+    basic.pause(5000)
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showIcon(IconNames.House)
+    basic.pause(5000)
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showIcon(IconNames.StickFigure)
+    basic.pause(5000)
+})
 let bearing = 0
 for (let index = 0; index < 1; index++) {
     basic.showIcon(IconNames.Heart)
