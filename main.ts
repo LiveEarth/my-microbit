@@ -4,13 +4,13 @@ for (let index = 0; index < 2; index++) {
     basic.pause(100)
     basic.showIcon(IconNames.SmallHeart)
 }
-RussianFont.showMessage("Здравей Макси ☺", 50)
+RussianFont.showMessage("☺", 50)
 soundExpression.happy.play()
 basic.forever(function () {
     bearing = input.compassHeading()
     if (bearing < 45 || bearing > 315) {
         basic.showString("N")
     } else {
-        basic.showString(" ")
+        led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
     }
 })
