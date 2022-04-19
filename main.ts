@@ -1,3 +1,6 @@
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+    basic.showIcon(IconNames.SmallSquare)
+})
 input.onButtonPressed(Button.A, function () {
     dice = randint(0, 99 + 1)
     basic.showNumber(dice)
@@ -29,6 +32,3 @@ for (let index = 0; index < 1; index++) {
 }
 RussianFont.showMessage("☺", 50)
 soundExpression.happy.play()
-basic.forever(function () {
-	
-})
