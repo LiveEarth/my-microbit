@@ -2,8 +2,13 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     basic.showIcon(IconNames.SmallSquare)
 })
 input.onButtonPressed(Button.A, function () {
-    dice = randint(0, 99 + 1)
-    basic.showNumber(dice)
+    randomNUM1 = randint(0, 50 + 1)
+    randomNUM2 = randint(0, 50 + 1)
+    basic.showString("" + (randomNUM1))
+    basic.showString("+")
+    basic.showString("" + (randomNUM2))
+    basic.showString("=")
+    basic.showNumber(randomNUM1 + randomNUM2)
 })
 input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.House)
@@ -24,7 +29,8 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     }
 })
 let compassdegre = 0
-let dice = 0
+let randomNUM2 = 0
+let randomNUM1 = 0
 for (let index = 0; index < 1; index++) {
     basic.showIcon(IconNames.Heart)
     basic.pause(100)
