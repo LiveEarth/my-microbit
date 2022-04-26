@@ -13,8 +13,8 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     }
 })
 input.onButtonPressed(Button.A, function () {
-    randomNUM1 = randint(1, 5)
-    randomNUM2 = randint(1, 5)
+    randomNUM1 = randint(1, 50)
+    randomNUM2 = randint(1, 50)
     basic.showString("" + (randomNUM1))
     basic.showString("+")
     basic.showString("" + (randomNUM2))
@@ -22,21 +22,29 @@ input.onButtonPressed(Button.A, function () {
     resultMATH = randomNUM1 + randomNUM2
 })
 input.onButtonPressed(Button.B, function () {
-    randomNUM1 = randint(1, 5)
-    randomNUM2 = randint(1, 5)
-    if (randomNUM1 >= randomNUM2) {
-        basic.showString("" + (randomNUM1))
-        basic.showString("-")
-        basic.showString("" + (randomNUM2))
+    randomNUM1 = randint(1, 50)
+    randomNUM2 = randint(1, 50)
+    while (randomNUM1 >= randomNUM2) {
+        for (let index = 0; index < 1; index++) {
+            for (let index = 0; index < 2; index++) {
+                basic.showIcon(IconNames.Square)
+                basic.pause(100)
+                basic.showIcon(IconNames.SmallSquare)
+            }
+            basic.showString("" + (randomNUM1))
+            basic.showString("-")
+            basic.showString("" + (randomNUM2))
+            resultMATH = randomNUM1 - randomNUM2
+        }
         basic.showString("=")
-        resultMATH = randomNUM1 - randomNUM2
-    } else {
-        randomNUM1 = randint(1, 5)
-        randomNUM2 = randint(1, 5)
+        break;
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showString("" + (resultMATH))
+    for (let index = 0; index < 3; index++) {
+        basic.pause(100)
+        basic.showString("" + (resultMATH))
+    }
     basic.pause(5000)
     basic.clearScreen()
 })
