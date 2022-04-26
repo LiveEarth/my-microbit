@@ -30,6 +30,10 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     randomNUM1 = randint(1, 50)
     randomNUM2 = randint(1, 50)
+    while (randomNUM1 <= randomNUM2) {
+        randomNUM1 = randint(1, 50)
+        randomNUM2 = randint(1, 50)
+    }
     if (randomNUM1 >= randomNUM2) {
         for (let index = 0; index < 1; index++) {
             for (let index = 0; index < 100; index++) {
@@ -52,6 +56,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         basic.pause(25)
     }
     basic.clearScreen()
+    basic.pause(100)
     basic.showString("" + (resultMATH))
     basic.pause(5000)
     basic.clearScreen()
