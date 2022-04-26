@@ -15,6 +15,12 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
 input.onButtonPressed(Button.A, function () {
     randomNUM1 = randint(1, 50)
     randomNUM2 = randint(1, 50)
+    for (let index = 0; index < 100; index++) {
+        led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
+        basic.pause(25)
+    }
+    basic.clearScreen()
+    basic.pause(100)
     basic.showString("" + (randomNUM1))
     basic.showString("+")
     basic.showString("" + (randomNUM2))
@@ -24,24 +30,24 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     randomNUM1 = randint(1, 50)
     randomNUM2 = randint(1, 50)
-    while (randomNUM1 >= randomNUM2) {
+    if (randomNUM1 >= randomNUM2) {
         for (let index = 0; index < 1; index++) {
-            for (let index = 0; index < 2; index++) {
-                basic.showIcon(IconNames.Square)
-                basic.pause(100)
-                basic.showIcon(IconNames.SmallSquare)
+            for (let index = 0; index < 100; index++) {
+                led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
+                basic.pause(25)
             }
+            basic.clearScreen()
+            basic.pause(100)
             basic.showString("" + (randomNUM1))
             basic.showString("-")
             basic.showString("" + (randomNUM2))
             resultMATH = randomNUM1 - randomNUM2
         }
         basic.showString("=")
-        break;
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    for (let index = 0; index < 200; index++) {
+    for (let index = 0; index < 100; index++) {
         led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
         basic.pause(25)
     }
