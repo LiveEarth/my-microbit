@@ -1,36 +1,49 @@
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
-    basic.showIcon(IconNames.SmallSquare)
+    compassdegre = input.compassHeading()
+    if (compassdegre < 45) {
+        RussianFont.showMessage("с", 200)
+    } else if (compassdegre < 135) {
+        RussianFont.showMessage("и", 200)
+    } else if (compassdegre < 225) {
+        RussianFont.showMessage("ю", 200)
+    } else if (compassdegre < 315) {
+        RussianFont.showMessage("з", 200)
+    } else {
+        RussianFont.showMessage("с", 200)
+    }
 })
 input.onButtonPressed(Button.A, function () {
-    randomNUM1 = randint(0, 50 + 1)
-    randomNUM2 = randint(0, 50 + 1)
+    randomNUM1 = randint(1, 5)
+    randomNUM2 = randint(1, 5)
     basic.showString("" + (randomNUM1))
     basic.showString("+")
     basic.showString("" + (randomNUM2))
     basic.showString("=")
-    basic.showNumber(randomNUM1 + randomNUM2)
+    resultMATH = randomNUM1 + randomNUM2
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showIcon(IconNames.House)
-    basic.pause(5000)
-})
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    compassdegre = input.compassHeading()
-    if (compassdegre < 45) {
-        RussianFont.showMessage("с", 50)
-    } else if (compassdegre < 135) {
-        RussianFont.showMessage("и", 50)
-    } else if (compassdegre < 225) {
-        RussianFont.showMessage("ю", 50)
-    } else if (compassdegre < 315) {
-        RussianFont.showMessage("з", 50)
+    randomNUM1 = randint(1, 5)
+    randomNUM2 = randint(1, 5)
+    if (randomNUM1 >= randomNUM2) {
+        basic.showString("" + (randomNUM1))
+        basic.showString("-")
+        basic.showString("" + (randomNUM2))
+        basic.showString("=")
+        resultMATH = randomNUM1 - randomNUM2
     } else {
-        RussianFont.showMessage("с", 50)
+        randomNUM1 = randint(1, 5)
+        randomNUM2 = randint(1, 5)
     }
 })
-let compassdegre = 0
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showString("" + (resultMATH))
+    basic.pause(5000)
+    basic.clearScreen()
+})
+let resultMATH = 0
 let randomNUM2 = 0
 let randomNUM1 = 0
+let compassdegre = 0
 for (let index = 0; index < 1; index++) {
     basic.showIcon(IconNames.Heart)
     basic.pause(100)
