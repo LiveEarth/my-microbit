@@ -41,10 +41,12 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    for (let index = 0; index < 3; index++) {
-        basic.pause(100)
-        basic.showString("" + (resultMATH))
+    for (let index = 0; index < 200; index++) {
+        led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
+        basic.pause(25)
     }
+    basic.clearScreen()
+    basic.showString("" + (resultMATH))
     basic.pause(5000)
     basic.clearScreen()
 })
