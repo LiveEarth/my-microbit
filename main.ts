@@ -35,19 +35,17 @@ input.onButtonPressed(Button.B, function () {
         randomNUM2 = randint(1, 50)
     }
     if (randomNUM1 >= randomNUM2) {
-        for (let index = 0; index < 1; index++) {
-            for (let index = 0; index < 100; index++) {
-                led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
-                basic.pause(25)
-            }
-            basic.clearScreen()
-            basic.pause(100)
-            basic.showString("" + (randomNUM1))
-            basic.showString("-")
-            basic.showString("" + (randomNUM2))
-            resultMATH = randomNUM1 - randomNUM2
+        for (let index = 0; index < 100; index++) {
+            led.plotBrightness(randint(0, 5), randint(0, 5), randint(0, 255))
+            basic.pause(25)
         }
+        basic.clearScreen()
+        basic.pause(100)
+        basic.showString("" + (randomNUM1))
+        basic.showString("-")
+        basic.showString("" + (randomNUM2))
         basic.showString("=")
+        resultMATH = randomNUM1 - randomNUM2
     }
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -71,4 +69,10 @@ for (let index = 0; index < 1; index++) {
     basic.showIcon(IconNames.SmallHeart)
 }
 RussianFont.showMessage("☺", 50)
-soundExpression.happy.play()
+soundExpression.giggle.play()
+basic.forever(function () {
+    while (input.isGesture(Gesture.ThreeG)) {
+        basic.showIcon(IconNames.Sad)
+        soundExpression.sad.play()
+    }
+})
