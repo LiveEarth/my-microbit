@@ -59,6 +59,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(5000)
     basic.clearScreen()
 })
+let picture = 0
 let resultMATH = 0
 let randomNUM2 = 0
 let randomNUM1 = 0
@@ -74,5 +75,119 @@ basic.forever(function () {
     while (input.isGesture(Gesture.ThreeG)) {
         basic.showIcon(IconNames.Sad)
         soundExpression.sad.play()
+    }
+    while (input.isGesture(Gesture.Shake)) {
+        picture = randint(1, 5)
+        if (picture == 1) {
+            soundExpression.happy.play()
+            for (let index = 0; index < 3; index++) {
+                basic.pause(1000)
+                basic.showLeds(`
+                    . # . # .
+                    . . . . .
+                    # . . . #
+                    . # # # .
+                    . . . . .
+                    `)
+                basic.pause(1000)
+                basic.showLeds(`
+                    . . . . .
+                    . # . # .
+                    . . . . .
+                    # . . . #
+                    . # # # .
+                    `)
+            }
+            basic.pause(1000)
+            basic.clearScreen()
+        } else if (picture == 2) {
+            soundExpression.happy.play()
+            for (let index = 0; index < 3; index++) {
+                basic.pause(1000)
+                basic.showLeds(`
+                    . . # . .
+                    . # # # .
+                    # # # # #
+                    . # . # .
+                    . # # # .
+                    `)
+                basic.pause(1000)
+                basic.showLeds(`
+                    . . # . .
+                    . # # # .
+                    # # # # #
+                    . # # # .
+                    . # . # .
+                    `)
+            }
+            basic.pause(1000)
+            basic.clearScreen()
+        } else if (picture == 3) {
+            soundExpression.happy.play()
+            for (let index = 0; index < 3; index++) {
+                basic.pause(1000)
+                basic.showLeds(`
+                    # # . . .
+                    . # . . .
+                    . # . . .
+                    . # # # .
+                    . # . # .
+                    `)
+                basic.pause(1000)
+                basic.showLeds(`
+                    . # # . .
+                    . . # . .
+                    . . # . .
+                    . . # # #
+                    . . # . #
+                    `)
+            }
+            basic.pause(1000)
+            basic.clearScreen()
+        } else if (picture == 4) {
+            soundExpression.happy.play()
+            for (let index = 0; index < 3; index++) {
+                basic.pause(1000)
+                basic.showLeds(`
+                    # . # . .
+                    # # # # #
+                    . . # . #
+                    . # . # .
+                    # . . . #
+                    `)
+                basic.pause(1000)
+                basic.showLeds(`
+                    . . # . #
+                    # # # # #
+                    # . # . .
+                    . # . # .
+                    . # . # .
+                    `)
+            }
+            basic.pause(1000)
+            basic.clearScreen()
+        } else {
+            soundExpression.happy.play()
+            for (let index = 0; index < 3; index++) {
+                basic.pause(1000)
+                basic.showLeds(`
+                    . # # # .
+                    # # # # #
+                    . . # . .
+                    # . # . .
+                    # # # . .
+                    `)
+                basic.pause(1000)
+                basic.showLeds(`
+                    . # # # .
+                    # # # # #
+                    . . # . .
+                    . . # . #
+                    . . # # #
+                    `)
+            }
+            basic.pause(1000)
+            basic.clearScreen()
+        }
     }
 })
