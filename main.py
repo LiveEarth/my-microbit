@@ -2,15 +2,15 @@ def on_logo_long_pressed():
     global compassdegre
     compassdegre = input.compass_heading()
     if compassdegre < 45:
-        RussianFont.show_message("с", 200)
+        basic.show_string("N")
     elif compassdegre < 135:
-        RussianFont.show_message("и", 200)
+        basic.show_string("E")
     elif compassdegre < 225:
-        RussianFont.show_message("ю", 200)
+        basic.show_string("S")
     elif compassdegre < 315:
-        RussianFont.show_message("з", 200)
+        basic.show_string("W")
     else:
-        RussianFont.show_message("с", 200)
+        basic.show_string("N")
 input.on_logo_event(TouchButtonEvent.LONG_PRESSED, on_logo_long_pressed)
 
 def on_button_pressed_a():
@@ -69,7 +69,6 @@ for index4 in range(1):
     basic.show_icon(IconNames.HEART)
     basic.pause(100)
     basic.show_icon(IconNames.SMALL_HEART)
-RussianFont.show_message("☺", 50)
 soundExpression.giggle.play()
 
 def on_forever():
@@ -80,23 +79,108 @@ def on_forever():
     while input.is_gesture(Gesture.SHAKE):
         picture = randint(1, 5)
         if picture == 1:
-            led.plot(1, 0)
-            basic.pause(200)
-            led.plot(3, 0)
-            basic.pause(200)
-            led.plot(2, 1)
-            basic.pause(200)
-            led.plot(1, 3)
-            basic.pause(200)
-            led.plot(2, 3)
-            basic.pause(200)
-            led.plot(3, 3)
+            soundExpression.happy.play()
+            for index5 in range(3):
+                basic.pause(1000)
+                basic.show_leds("""
+                    . # . # .
+                                        . . . . .
+                                        # . . . #
+                                        . # # # .
+                                        . . . . .
+                """)
+                basic.pause(1000)
+                basic.show_leds("""
+                    . . . . .
+                                        . # . # .
+                                        . . . . .
+                                        # . . . #
+                                        . # # # .
+                """)
+            basic.pause(1000)
+            basic.clear_screen()
         elif picture == 2:
-            pass
+            soundExpression.happy.play()
+            for index6 in range(3):
+                basic.pause(1000)
+                basic.show_leds("""
+                    . . # . .
+                                        . # # # .
+                                        # # # # #
+                                        . # . # .
+                                        . # # # .
+                """)
+                basic.pause(1000)
+                basic.show_leds("""
+                    . . # . .
+                                        . # # # .
+                                        # # # # #
+                                        . # # # .
+                                        . # . # .
+                """)
+            basic.pause(1000)
+            basic.clear_screen()
         elif picture == 3:
-            pass
+            soundExpression.happy.play()
+            for index7 in range(3):
+                basic.pause(1000)
+                basic.show_leds("""
+                    # # . . .
+                                        . # . . .
+                                        . # . . .
+                                        . # # # .
+                                        . # . # .
+                """)
+                basic.pause(1000)
+                basic.show_leds("""
+                    . # # . .
+                                        . . # . .
+                                        . . # . .
+                                        . . # # #
+                                        . . # . #
+                """)
+            basic.pause(1000)
+            basic.clear_screen()
         elif picture == 4:
-            pass
+            soundExpression.happy.play()
+            for index8 in range(3):
+                basic.pause(1000)
+                basic.show_leds("""
+                    # . # . .
+                                        # # # # #
+                                        . . # . #
+                                        . # . # .
+                                        # . . . #
+                """)
+                basic.pause(1000)
+                basic.show_leds("""
+                    . . # . #
+                                        # # # # #
+                                        # . # . .
+                                        . # . # .
+                                        . # . # .
+                """)
+            basic.pause(1000)
+            basic.clear_screen()
         else:
-            pass
+            soundExpression.happy.play()
+            for index9 in range(3):
+                basic.pause(1000)
+                basic.show_leds("""
+                    . # # # .
+                                        # # # # #
+                                        . . # . .
+                                        # . # . .
+                                        # # # . .
+                """)
+                basic.pause(1000)
+                basic.show_leds("""
+                    . # # # .
+                                        # # # # #
+                                        . . # . .
+                                        . . # . #
+                                        . . # # #
+                """)
+            basic.pause(1000)
+            basic.clear_screen()
 basic.forever(on_forever)

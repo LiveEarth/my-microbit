@@ -4,8 +4,8 @@
     "dependencies": {
         "core": "*",
         "microphone": "*",
-        "microbit-russian-font": "github:nenahov/microbit-russian-font#853f1a0322d137063d92934c06e8662519099fa0",
-        "bluetooth": "*"
+        "bluetooth": "*",
+        "OLED12864_I2C": "github:makecode-extensions/oled12864_i2c#v1.5.0"
     },
     "files": [
         "main.blocks",
