@@ -69,12 +69,30 @@ input.onButtonPressed(Button.A, function () {
     basic.showString("" + randomNUM1)
     basic.showString("+")
     basic.showString("" + randomNUM2)
-    basic.showString("=")
+    basic.showString("?")
     resultMATH = randomNUM1 + randomNUM2
     OLED12864_I2C.showString(
     0,
     0,
-    "" + randomNUM1 + " + " + ("" + randomNUM2) + " = ",
+    " " + randomNUM1,
+    1
+    )
+    OLED12864_I2C.showString(
+    0,
+    1,
+    "+",
+    1
+    )
+    OLED12864_I2C.showString(
+    0,
+    2,
+    " " + randomNUM2,
+    1
+    )
+    OLED12864_I2C.hline(
+    0,
+    25,
+    20,
     1
     )
 })
@@ -95,12 +113,30 @@ input.onButtonPressed(Button.B, function () {
         basic.showString("" + randomNUM1)
         basic.showString("-")
         basic.showString("" + randomNUM2)
-        basic.showString("=")
+        basic.showString("?")
         resultMATH = randomNUM1 - randomNUM2
         OLED12864_I2C.showString(
         0,
         0,
-        "" + randomNUM1 + " - " + ("" + randomNUM2) + " = ",
+        " " + randomNUM1,
+        1
+        )
+        OLED12864_I2C.showString(
+        0,
+        1,
+        "-",
+        1
+        )
+        OLED12864_I2C.showString(
+        0,
+        2,
+        " " + randomNUM2,
+        1
+        )
+        OLED12864_I2C.hline(
+        0,
+        25,
+        20,
         1
         )
     }
@@ -137,6 +173,7 @@ for (let index = 0; index < 2; index++) {
 }
 basic.clearScreen()
 basic.showString("HI MAXIM!")
+OLED12864_I2C.zoom(true)
 OLED12864_I2C.showString(
 0,
 0,
