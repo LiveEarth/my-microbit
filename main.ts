@@ -95,6 +95,22 @@ input.onButtonPressed(Button.A, function () {
     20,
     1
     )
+    timer = 180
+    for (let index = 0; index < 181; index++) {
+        timer += -1
+        if (timer == 0) {
+            OLED12864_I2C.showString(
+            4,
+            1,
+            "Time:" + timer,
+            1
+            )
+        } else {
+            basic.clearScreen()
+            OLED12864_I2C.clear()
+            break;
+        }
+    }
 })
 input.onButtonPressed(Button.B, function () {
     randomNUM1 = randint(1, 100)
@@ -161,6 +177,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     OLED12864_I2C.clear()
 })
 let picture = 0
+let timer = 0
 let resultMATH = 0
 let randomNUM2 = 0
 let randomNUM1 = 0
@@ -172,7 +189,6 @@ for (let index = 0; index < 2; index++) {
     basic.showIcon(IconNames.SmallHeart)
 }
 basic.clearScreen()
-basic.showString("HI MAXIM!")
 OLED12864_I2C.zoom(true)
 OLED12864_I2C.showString(
 0,
@@ -186,7 +202,6 @@ OLED12864_I2C.showString(
 "BIRTHDAY MAXI :)",
 1
 )
-soundExpression.giggle.play()
 basic.pause(5000)
 OLED12864_I2C.clear()
 basic.forever(function () {
