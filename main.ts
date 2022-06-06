@@ -65,10 +65,6 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(25)
     }
     basic.clearScreen()
-    basic.pause(100)
-    basic.showString("" + randomNUM1)
-    basic.showString("+")
-    basic.showString("" + randomNUM2)
     basic.showString("?")
     resultMATH = randomNUM1 + randomNUM2
     OLED12864_I2C.clear()
@@ -108,7 +104,6 @@ input.onButtonPressed(Button.A, function () {
             break;
         }
         basic.pause(1000)
-        break;
     }
     basic.clearScreen()
     OLED12864_I2C.clear()
@@ -126,10 +121,6 @@ input.onButtonPressed(Button.B, function () {
             basic.pause(25)
         }
         basic.clearScreen()
-        basic.pause(100)
-        basic.showString("" + randomNUM1)
-        basic.showString("-")
-        basic.showString("" + randomNUM2)
         basic.showString("?")
         resultMATH = randomNUM1 - randomNUM2
         OLED12864_I2C.clear()
@@ -170,7 +161,6 @@ input.onButtonPressed(Button.B, function () {
             break;
         }
         basic.pause(1000)
-        break;
     }
     basic.clearScreen()
     OLED12864_I2C.clear()
