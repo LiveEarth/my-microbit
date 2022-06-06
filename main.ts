@@ -71,6 +71,7 @@ input.onButtonPressed(Button.A, function () {
     basic.showString("" + randomNUM2)
     basic.showString("?")
     resultMATH = randomNUM1 + randomNUM2
+    OLED12864_I2C.clear()
     OLED12864_I2C.showString(
     0,
     0,
@@ -103,13 +104,11 @@ input.onButtonPressed(Button.A, function () {
         "Time:" + (180 - index),
         1
         )
-        if (input.buttonIsPressed(Button.A)) {
-            break;
-        }
-        if (input.buttonIsPressed(Button.B)) {
+        if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
             break;
         }
         basic.pause(1000)
+        break;
     }
     basic.clearScreen()
     OLED12864_I2C.clear()
@@ -133,6 +132,7 @@ input.onButtonPressed(Button.B, function () {
         basic.showString("" + randomNUM2)
         basic.showString("?")
         resultMATH = randomNUM1 - randomNUM2
+        OLED12864_I2C.clear()
         OLED12864_I2C.showString(
         0,
         0,
@@ -157,25 +157,23 @@ input.onButtonPressed(Button.B, function () {
         20,
         1
         )
-        index = 0
-        for (let index = 0; index <= 180; index++) {
-            OLED12864_I2C.showString(
-            4,
-            1,
-            "Time:" + (180 - index),
-            1
-            )
-            if (input.buttonIsPressed(Button.A)) {
-                break;
-            }
-            if (input.buttonIsPressed(Button.B)) {
-                break;
-            }
-            basic.pause(1000)
-        }
-        basic.clearScreen()
-        OLED12864_I2C.clear()
     }
+    index = 0
+    for (let index = 0; index <= 180; index++) {
+        OLED12864_I2C.showString(
+        4,
+        1,
+        "Time:" + (180 - index),
+        1
+        )
+        if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
+            break;
+        }
+        basic.pause(1000)
+        break;
+    }
+    basic.clearScreen()
+    OLED12864_I2C.clear()
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     OLED12864_I2C.clear()
