@@ -170,7 +170,6 @@ input.onButtonPressed(Button.B, function () {
     OLED12864_I2C.clear()
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    OLED12864_I2C.clear()
     for (let index = 0; index < 120; index++) {
         led.plotBrightness(randint(0, 5), randint(0, 5), 255)
         basic.pause(25)
