@@ -103,16 +103,14 @@ input.onButtonPressed(Button.A, function () {
         "Time:" + (180 - index),
         1
         )
+        if (input.buttonIsPressed(Button.A)) {
+            break;
+        }
+        if (input.buttonIsPressed(Button.B)) {
+            break;
+        }
         basic.pause(1000)
     }
-    OLED12864_I2C.clear()
-    OLED12864_I2C.showString(
-    4,
-    2,
-    "Bye !",
-    1
-    )
-    basic.pause(5000)
     basic.clearScreen()
     OLED12864_I2C.clear()
 })
@@ -167,16 +165,14 @@ input.onButtonPressed(Button.B, function () {
             "Time:" + (180 - index),
             1
             )
+            if (input.buttonIsPressed(Button.A)) {
+                break;
+            }
+            if (input.buttonIsPressed(Button.B)) {
+                break;
+            }
             basic.pause(1000)
         }
-        OLED12864_I2C.clear()
-        OLED12864_I2C.showString(
-        4,
-        2,
-        "Bye !",
-        1
-        )
-        basic.pause(5000)
         basic.clearScreen()
         OLED12864_I2C.clear()
     }
