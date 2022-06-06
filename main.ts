@@ -172,8 +172,6 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         basic.pause(25)
     }
     basic.clearScreen()
-    basic.pause(100)
-    basic.showString("" + resultMATH)
     OLED12864_I2C.showString(
     0,
     0,
