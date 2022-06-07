@@ -33,11 +33,6 @@ input.onButtonPressed(Button.A, function () {
     20,
     1
     )
-    for (let index = 0; index <= 180; index++) {
-        basic.pause(1000)
-    }
-    basic.clearScreen()
-    OLED12864_I2C.clear()
 })
 input.onButtonPressed(Button.B, function () {
     randomNUM1 = randint(1, 100)
@@ -80,11 +75,6 @@ input.onButtonPressed(Button.B, function () {
         1
         )
     }
-    for (let index = 0; index <= 180; index++) {
-        basic.pause(1000)
-    }
-    basic.clearScreen()
-    OLED12864_I2C.clear()
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     OLED12864_I2C.clear()
@@ -117,20 +107,20 @@ basic.clearScreen()
 OLED12864_I2C.zoom(true)
 OLED12864_I2C.showString(
 0,
-1,
+0,
 "Hello Maxi :)",
 1
 )
 OLED12864_I2C.showString(
 0,
 2,
-"Lets go to play",
+"Lets go",
 1
 )
 OLED12864_I2C.showString(
 0,
 3,
-"to play",
+"to play...",
 1
 )
 soundExpression.giggle.play()
