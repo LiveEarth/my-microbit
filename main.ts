@@ -1,62 +1,3 @@
-input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
-    compassdegre = input.compassHeading()
-    if (compassdegre < 45) {
-        basic.showString("N")
-        OLED12864_I2C.showString(
-        0,
-        0,
-        "North",
-        1
-        )
-        basic.pause(5000)
-        basic.clearScreen()
-        OLED12864_I2C.clear()
-    } else if (compassdegre < 135) {
-        basic.showString("E")
-        OLED12864_I2C.showString(
-        0,
-        0,
-        "East",
-        1
-        )
-        basic.pause(5000)
-        basic.clearScreen()
-        OLED12864_I2C.clear()
-    } else if (compassdegre < 225) {
-        basic.showString("S")
-        OLED12864_I2C.showString(
-        0,
-        0,
-        "South",
-        1
-        )
-        basic.pause(5000)
-        basic.clearScreen()
-        OLED12864_I2C.clear()
-    } else if (compassdegre < 315) {
-        basic.showString("W")
-        OLED12864_I2C.showString(
-        0,
-        0,
-        "West",
-        1
-        )
-        basic.pause(5000)
-        basic.clearScreen()
-        OLED12864_I2C.clear()
-    } else {
-        basic.showString("N")
-        OLED12864_I2C.showString(
-        0,
-        0,
-        "North",
-        1
-        )
-        basic.pause(5000)
-        basic.clearScreen()
-        OLED12864_I2C.clear()
-    }
-})
 input.onButtonPressed(Button.A, function () {
     randomNUM1 = randint(1, 100)
     randomNUM2 = randint(1, 100)
@@ -92,19 +33,7 @@ input.onButtonPressed(Button.A, function () {
     20,
     1
     )
-    index4 = 0
     for (let index = 0; index <= 180; index++) {
-        OLED12864_I2C.showString(
-        4,
-        1,
-        "Time:" + (180 - index),
-        1
-        )
-        if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
-            break;
-        } else if (input.logoIsPressed()) {
-            break;
-        }
         basic.pause(1000)
     }
     basic.clearScreen()
@@ -151,25 +80,14 @@ input.onButtonPressed(Button.B, function () {
         1
         )
     }
-    index4 = 0
-    for (let index3 = 0; index3 <= 180; index3++) {
-        OLED12864_I2C.showString(
-        4,
-        1,
-        "Time:" + (180 - index3),
-        1
-        )
-        if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B)) {
-            break;
-        } else if (input.logoIsPressed()) {
-            break;
-        }
+    for (let index = 0; index <= 180; index++) {
         basic.pause(1000)
     }
     basic.clearScreen()
     OLED12864_I2C.clear()
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    OLED12864_I2C.clear()
     for (let index = 0; index < 120; index++) {
         led.plotBrightness(randint(0, 5), randint(0, 5), 255)
         basic.pause(25)
@@ -186,11 +104,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     OLED12864_I2C.clear()
 })
 let picture = 0
-let index4 = 0
 let resultMATH = 0
 let randomNUM2 = 0
 let randomNUM1 = 0
-let compassdegre = 0
 OLED12864_I2C.init(60)
 for (let index = 0; index < 2; index++) {
     basic.showIcon(IconNames.Heart)
@@ -201,16 +117,17 @@ basic.clearScreen()
 OLED12864_I2C.zoom(true)
 OLED12864_I2C.showString(
 0,
-0,
-"HAPPY",
+1,
+"Hello Maxi :)",
 1
 )
 OLED12864_I2C.showString(
 0,
-1,
-"BIRTHDAY MAXI :)",
+2,
+"Lets go to play",
 1
 )
+soundExpression.giggle.play()
 basic.pause(5000)
 OLED12864_I2C.clear()
 basic.forever(function () {
@@ -271,7 +188,7 @@ basic.forever(function () {
                 basic.showLeds(`
                     # # . . .
                     . # . . .
-                    . # . . .
+                    . # . . #
                     . # # # .
                     . # . # .
                     `)
