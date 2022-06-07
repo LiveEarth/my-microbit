@@ -127,6 +127,12 @@ OLED12864_I2C.showString(
 "Lets go to play",
 1
 )
+OLED12864_I2C.showString(
+0,
+3,
+"to play",
+1
+)
 soundExpression.giggle.play()
 basic.pause(5000)
 OLED12864_I2C.clear()
