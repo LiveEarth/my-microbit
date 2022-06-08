@@ -1,10 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     randomNUM1 = randint(1, 100)
     randomNUM2 = randint(1, 100)
-    for (let index = 0; index < 120; index++) {
-        led.plotBrightness(randint(0, 5), randint(0, 5), 255)
-        basic.pause(25)
-    }
     basic.clearScreen()
     basic.showString("?")
     resultMATH = randomNUM1 + randomNUM2
@@ -42,10 +38,6 @@ input.onButtonPressed(Button.B, function () {
         randomNUM2 = randint(1, 100)
     }
     if (randomNUM1 >= randomNUM2) {
-        for (let index = 0; index < 120; index++) {
-            led.plotBrightness(randint(0, 5), randint(0, 5), 255)
-            basic.pause(25)
-        }
         basic.clearScreen()
         basic.showString("?")
         resultMATH = randomNUM1 - randomNUM2
@@ -76,24 +68,40 @@ input.onButtonPressed(Button.B, function () {
         )
     }
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+input.onGesture(Gesture.Shake, function () {
     OLED12864_I2C.clear()
-    for (let index = 0; index < 120; index++) {
-        led.plotBrightness(randint(0, 5), randint(0, 5), 255)
-        basic.pause(25)
-    }
-    basic.clearScreen()
+    umnojenieRAND1 = randint(2, 3)
+    umnojenieRAND2 = randint(2, 9)
+    resultMATH = umnojenieRAND1 * umnojenieRAND2
     OLED12864_I2C.showString(
     0,
-    0,
-    "Answer: " + resultMATH,
+    2,
+    "" + umnojenieRAND1 + " x " + umnojenieRAND2,
     1
     )
-    basic.pause(5000)
+    OLED12864_I2C.hline(
+    0,
+    27,
+    27,
+    1
+    )
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    for (let index = 0; index < 120; index++) {
+        led.plotBrightness(randint(0, 5), randint(0, 5), 255)
+        basic.pause(20)
+    }
     basic.clearScreen()
-    OLED12864_I2C.clear()
+    OLED12864_I2C.showNumber(
+    1,
+    4,
+    resultMATH,
+    1
+    )
 })
 let picture = 0
+let umnojenieRAND2 = 0
+let umnojenieRAND1 = 0
 let resultMATH = 0
 let randomNUM2 = 0
 let randomNUM1 = 0
@@ -104,23 +112,17 @@ for (let index = 0; index < 2; index++) {
     basic.showIcon(IconNames.SmallHeart)
 }
 basic.clearScreen()
-OLED12864_I2C.zoom(true)
+OLED12864_I2C.zoom(false)
 OLED12864_I2C.showString(
 0,
 0,
-"Hello Maxi :)",
+"Hello MAXIM :)",
 1
 )
 OLED12864_I2C.showString(
 0,
 2,
-"Lets go",
-1
-)
-OLED12864_I2C.showString(
-0,
-3,
-"to play...",
+"Lets go to play with numbers... ",
 1
 )
 soundExpression.giggle.play()
