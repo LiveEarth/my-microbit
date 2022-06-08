@@ -121,8 +121,14 @@ OLED12864_I2C.showString(
 )
 OLED12864_I2C.showString(
 0,
+1,
+"Lets go to play ",
+1
+)
+OLED12864_I2C.showString(
+0,
 2,
-"Lets go to play with numbers... ",
+"with numbers... ",
 1
 )
 soundExpression.giggle.play()
