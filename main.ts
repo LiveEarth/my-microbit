@@ -241,3 +241,7 @@ basic.forever(function () {
         }
     }
 })
+loops.everyInterval(3600000, function () {
+    OLED12864_I2C.clear()
+    basic.clearScreen()
+})
