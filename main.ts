@@ -79,12 +79,6 @@ input.onGesture(Gesture.Shake, function () {
     "" + umnojenieRAND1 + " x " + umnojenieRAND2,
     1
     )
-    OLED12864_I2C.hline(
-    0,
-    15,
-    27,
-    1
-    )
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     for (let index = 0; index < 120; index++) {
