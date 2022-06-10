@@ -75,13 +75,13 @@ input.onGesture(Gesture.Shake, function () {
     resultMATH = umnojenieRAND1 * umnojenieRAND2
     OLED12864_I2C.showString(
     0,
-    2,
+    0,
     "" + umnojenieRAND1 + " x " + umnojenieRAND2,
     1
     )
     OLED12864_I2C.hline(
     0,
-    27,
+    15,
     27,
     1
     )
@@ -92,9 +92,15 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         basic.pause(20)
     }
     basic.clearScreen()
+    OLED12864_I2C.vline(
+    30,
+    0,
+    25,
+    1
+    )
     OLED12864_I2C.showNumber(
+    7,
     1,
-    4,
     resultMATH,
     1
     )
@@ -112,23 +118,10 @@ for (let index = 0; index < 2; index++) {
     basic.showIcon(IconNames.SmallHeart)
 }
 basic.clearScreen()
-OLED12864_I2C.zoom(false)
 OLED12864_I2C.showString(
-0,
-0,
-"Hello MAXIM :)",
-1
-)
-OLED12864_I2C.showString(
-0,
 1,
-"Lets go to play ",
-1
-)
-OLED12864_I2C.showString(
-0,
-2,
-"with numbers... ",
+1,
+"HI MAXIM :)",
 1
 )
 soundExpression.giggle.play()
